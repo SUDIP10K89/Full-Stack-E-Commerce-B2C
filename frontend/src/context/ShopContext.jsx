@@ -135,6 +135,7 @@ const ShopContextProvider = (props) => {
   };
 
   const getCartData = async (token) => {
+    if(token){
     try {
       const response = await axios.get(backendUrl + "/api/cart/get", {
         headers: {
@@ -144,8 +145,9 @@ const ShopContextProvider = (props) => {
       setCartItems(response.data.cartData);
     } catch (error) {
       console.error("Error fetching cart data:", error);
-      toast.error(error.message);
+      toast.error("Login to access all features.");
     }
+  }
   };
 
   useEffect(() => {
