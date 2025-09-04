@@ -30,6 +30,12 @@ app.get("/", (req, res) => {
     res.send("Welcome to the e-commerce API!");
 });
 
+setInterval(() => {
+  fetch("https://full-stack-e-commerce-b2c.onrender.com")
+    .then((res) => console.log("Pinged self:", res.status))
+    .catch((err) => console.error("Ping failed", err));
+}, 1000*60*5); // 1hr in milisec
+
 
 app.listen(PORT, () => {
     console.log(`Server is running on http://localhost:${PORT}`);
