@@ -34,7 +34,7 @@ setInterval(() => {
   fetch("https://full-stack-e-commerce-b2c.onrender.com")
     .then((res) => console.log("Pinged self:", res.status))
     .catch((err) => console.error("Ping failed", err));
-}, 1000*60*5); // 1hr in milisec
+}, 1000*60*5); 
 
 
 app.listen(PORT, () => {
